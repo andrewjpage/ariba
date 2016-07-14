@@ -238,12 +238,12 @@ class RefGenesGetter:
         print('"ARG-ANNOT, a new bioinformatic tool to discover antibiotic resistance genes in bacterial genomes",\nGupta et al 2014, PMID: 24145532\n')
 
     def _get_from_vfdb_core(self, outprefix):
-        self._get_from_vfdb_common('VFDB_setA_nt.fas.gz','core')
+        self._get_from_vfdb_common('VFDB_setA_nt.fas.gz','core',outprefix)
 		
     def _get_from_vfdb_full(self, outprefix):
-        self._get_from_vfdb_common('VFDB_setB_nt.fas.gz','full')
+        self._get_from_vfdb_common('VFDB_setB_nt.fas.gz','full',outprefix)
 	
-    def _get_from_vfdb_common(self,filename,info_text):
+    def _get_from_vfdb_common(self,filename,info_text,outprefix):
         outprefix = os.path.abspath(outprefix)
         tmpdir = outprefix + '.tmp.download'
         current_dir = os.getcwd()
